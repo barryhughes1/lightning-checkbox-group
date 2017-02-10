@@ -1,0 +1,72 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" 
+                access="global">
+    
+    <!-- 0. Includes & Dependencies -->
+    
+    <!-- 1. Attributes (TO DO) -->
+    <aura:attribute name="fieldParentFieldSet" 
+                    type="String" 
+                    default=""
+                    description=""
+                    />
+    <aura:attribute name="label" 
+                    type="String" 
+                    default=""
+                    description=""
+                    />
+    <aura:attribute name="EnableDisableAll" 
+                    type="String" 
+                    default="no"
+                    description=""
+                    />
+    <aura:attribute name="values" 
+                    type="String[]" 
+                    default="[]"
+                    description=""
+                    />
+    <aura:attribute name="checkboxes" 
+                    type="Object[]" 
+                    default="[]"
+                    description=""
+                    />
+    
+    <!-- 2. Handlers (TO DO) -->
+    <aura:handler name="init" 
+                  value="{!this}" 
+                  action="{!c.doInit}"
+                  description=""
+                  />
+    <aura:handler name="Checkbox_Element_Change" 
+                  event="c:Checkbox_Element_Change" 
+                  action="{!c.updateCheckboxes}"
+                  description=""
+                  />
+    <aura:handler name="change" 
+                  value="{!v.checkboxes}" 
+                  action="{!c.populateCheckboxes}"
+                  description=""
+                  />
+    
+    <!-- 3. Events (TO DO) -->
+    <aura:registerEvent name="Checkbox_Change" 
+                        type="c:Checkbox_Change"
+                        description=""
+                        />
+    
+    <!-- 4. Methods -->
+    
+    <!-- 5. Layout -->
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">{!v.label}</legend>
+        <div class="slds-form-element__control">
+            <aura:iteration items="{!v.checkboxes}" var="item">
+                  <c:Checkbox_Element fieldName="{!item.valueId}"
+                                      fieldLabel="{!item.label}"
+                                      fieldValue="{!item.value}"
+                                      fieldParentFieldSet="checkboxes"
+                                      fieldDisabled="{!item.disabled}" />
+            </aura:iteration>
+        </div>
+    </fieldset> 
+    
+</aura:component>

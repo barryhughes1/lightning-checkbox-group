@@ -1,0 +1,24 @@
+<aura:component access="global">
+    
+    <aura:attribute name="fieldName" type="String" default="" />
+    <aura:attribute name="fieldLabel" type="String" default="" />
+    <aura:attribute name="fieldParentFieldSet" type="String" default="" />
+    <aura:attribute name="fieldValue" type="Boolean" default="false" />
+    <aura:attribute name="fieldDisabled" type="Boolean" default="false" />
+    
+    <aura:registerEvent name="Checkbox_Element_Change" 
+                        type="c:Checkbox_Element_Change"/>
+    
+    <!-- Handle Filter Reset button -->
+    <aura:handler event="c:Checkbox_Reset" action="{!c.resetFieldValues}" />
+    
+    <label class="slds-checkbox">
+        <ui:inputCheckbox aura:Id="chkbox" 
+                          value="{!v.fieldValue}" 
+                          change="{!c.onCheck}" 
+                          disabled="{!v.fieldDisabled}" />
+        <span class="slds-checkbox--faux" />
+        <span class="slds-form-element__label marginleft10">{!v.fieldLabel}</span>
+    </label>
+    
+</aura:component>

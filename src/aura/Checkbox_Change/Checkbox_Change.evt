@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="fieldChanged" type="String" default="" />
+	<aura:attribute name="fieldValuesChanged" type="Object[]" default="[]"/>
+</aura:event>
