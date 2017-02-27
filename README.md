@@ -119,7 +119,7 @@ AND SAVE!
 
 4. Add the following to the controller of the 'CheckboxGroup' component
 
-
+```
 ({
     //Called from either another helper method or from the aura:initHandler call or an event, etc.
     doInit : function(component, event, helper) {
@@ -141,7 +141,7 @@ AND SAVE!
     	// To be completed in Step 13
     }
 })
-
+```
 
 AND SAVE!
 
@@ -201,7 +201,7 @@ AND SAVE!
 
 8. Update the Controller in the 'Checkbox_Element' to fire the event
 
-
+```
 ({
     onCheck: function(component) {
     	// will fill this in at Step 8
@@ -216,6 +216,7 @@ AND SAVE!
         compEvent.fire();    	
     }
 })
+```
 
 
 and SAVE!
@@ -228,10 +229,12 @@ and SAVE!
     <aura:registerEvent name="Checkbox_Element_Change" type="c:Checkbox_Element_Change"/>
 
     and SAVE!
+    
+    
 10. Open the 'Helper' in the  'CheckboxGroup' lightning component and add
 the following helper function
 
-
+```
 ({
     enableDisableCheckboxesFromAll : function(component, fldName) {
         var fld = component.get("v."+fldName);
@@ -254,7 +257,7 @@ the following helper function
         component.set("v."+fldName, fld);
 	}
 })
-
+```
 
 and SAVE!
 
@@ -262,7 +265,7 @@ and SAVE!
 11. Open the 'Controller' in the 'CheckboxGroup' lightning component and 
 finish the updateCheckboxes function:
 
-
+```
 updateCheckboxes : function(component, event, helper) {
         // To be completed in Step 11
         if(component.get("v.EnableDisableAll") === "yes") {
@@ -274,6 +277,7 @@ updateCheckboxes : function(component, event, helper) {
 	        component.set("v.checkboxes", fld);
         }
     },
+```
 
 
 and SAVE!
@@ -305,7 +309,7 @@ checkbox components and effects their behaviour
 13. In the controller of the 'CheckboxGroup' lightning component finish the
 populateCheckboxes function:
 
-
+```
     populateCheckboxes : function(component) {
     	// To be completed in Step 13
         var compEvent = component.getEvent("Checkbox_Change");
@@ -317,7 +321,7 @@ populateCheckboxes function:
         );
         compEvent.fire();
     }
-
+```
 
 and SAVE!
 
@@ -359,7 +363,7 @@ and SAVE!
 
 17. Open the Lightning Component called 'CheckboxDemo' and add the following to the 'Controller':
 
-
+```
 ({
     updateCheckboxes : function(component, event, helper) {
         var params = event.getParams();
@@ -369,6 +373,7 @@ and SAVE!
         // now fire a search or do something with the field
     }
 })
+```
 
 
 and SAVE!
