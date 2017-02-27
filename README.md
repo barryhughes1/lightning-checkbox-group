@@ -117,7 +117,7 @@ STEP 3. Create a new Lightning Component called 'CheckboxGroup'
 AND SAVE!
 
 
-STEP 44. Add the following to the controller of the 'CheckboxGroup' component
+STEP 4. Add the following to the controller of the 'CheckboxGroup' component
 
 ```
 ({
@@ -174,7 +174,9 @@ STEP 5. Create a Lightning Component called 'CheckboxDemo'
 ```
 
 AND SAVE!
-6. As a way to test the checkbox, we can create a Lightning Application
+
+
+STEP 6. As a way to test the checkbox, we can create a Lightning Application
 as follows:
 
 ```
@@ -187,7 +189,7 @@ as follows:
 and SAVE! Click 'Preview' to test the checkbox.
 
 
-7. Create a Lightning Event called 'Checkbox_Element_Change'
+STEP 7. Create a Lightning Event called 'Checkbox_Element_Change'
 
 ```
 <aura:event type="COMPONENT" description="Event template">
@@ -201,7 +203,7 @@ and SAVE! Click 'Preview' to test the checkbox.
 AND SAVE!
 
 
-8. Update the Controller in the 'Checkbox_Element' to fire the event
+STEP 8. Update the Controller in the 'Checkbox_Element' to fire the event
 
 ```
 ({
@@ -224,7 +226,7 @@ AND SAVE!
 and SAVE!
 
 
-9. Open the Lightning Component called 'Checkbox_Element' register the event
+STEP 9. Open the Lightning Component called 'Checkbox_Element' register the event
 
 ```
     <!-- Step 9: Register the change event -->
@@ -234,7 +236,7 @@ and SAVE!
     and SAVE!
     
     
-10. Open the 'Helper' in the  'CheckboxGroup' lightning component and add
+STEP 10. Open the 'Helper' in the  'CheckboxGroup' lightning component and add
 the following helper function
 
 ```
@@ -265,7 +267,7 @@ the following helper function
 and SAVE!
 
 
-11. Open the 'Controller' in the 'CheckboxGroup' lightning component and 
+STEP 11. Open the 'Controller' in the 'CheckboxGroup' lightning component and 
 finish the updateCheckboxes function:
 
 ```
@@ -287,7 +289,7 @@ and SAVE!
 
 
  
-12. Open the 'CheckboxGroup' lightning component and 
+STEP 12. Open the 'CheckboxGroup' lightning component and 
 
 ```
     <!-- STEP 12. Checkbox_Element_Change Handler -->
@@ -310,7 +312,7 @@ Updating the checkbox attribute, automatically changes the individual
 checkbox components and effects their behaviour
 
 
-13. In the controller of the 'CheckboxGroup' lightning component finish the
+STEP 13. In the controller of the 'CheckboxGroup' lightning component finish the
 populateCheckboxes function:
 
 ```
@@ -330,7 +332,7 @@ populateCheckboxes function:
 and SAVE!
 
 
-14. Now add a handler to detect a change in the 'checkboxes' attribute
+STEP 14. Now add a handler to detect a change in the 'checkboxes' attribute
 
 ```
     <!-- STEP 14. Detect a change in the checkboxes attribute -->
@@ -344,7 +346,7 @@ and SAVE!
 and SAVE!
 
 
-15. Create a Lightning Event called 'Checkbox_Change'
+STEP 15. Create a Lightning Event called 'Checkbox_Change'
 
 ```
 <aura:event type="COMPONENT" description="Event template">
@@ -355,7 +357,7 @@ and SAVE!
 
 
 
-16. OK, we want the result of the selecting and de-selecting of checkboxes
+STEP 16. OK, we want the result of the selecting and de-selecting of checkboxes
 to be communicated back to the parent 'CheckboxDemo' component. So, lets make an event
 
 ```
@@ -370,7 +372,7 @@ to be communicated back to the parent 'CheckboxDemo' component. So, lets make an
 and SAVE!
 
 
-17. Open the Lightning Component called 'CheckboxDemo' and add the following to the 'Controller':
+STEP 17. Open the Lightning Component called 'CheckboxDemo' and add the following to the 'Controller':
 
 ```
 ({
@@ -388,7 +390,7 @@ and SAVE!
 and SAVE!
 
 
-18. Finally, add the followng to the CheckboxDemo Component
+STEP 18. Finally, add the followng to the CheckboxDemo Component
 
 ```
     <!-- STEP 18. Register an event receive results from any checkboxgroup component -->
