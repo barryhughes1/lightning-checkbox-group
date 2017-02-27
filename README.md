@@ -15,7 +15,7 @@ TUTORIAL TO MAKE THIS FUNCTIONALITY WITHOUT CLONING
 
 1. Create a new Lightning Component called 'Checkbox_Element'
 
-
+```
 <aura:component access="global">
     
     <aura:attribute name="fieldName" type="String" default="" />
@@ -37,7 +37,7 @@ TUTORIAL TO MAKE THIS FUNCTIONALITY WITHOUT CLONING
     </label>
     
 </aura:component> 
-
+```
 
 AND SAVE!
 
@@ -62,7 +62,7 @@ AND SAVE!
  
 3. Create a new Lightning Component called 'CheckboxGroup'
 
-
+```
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" 
                 access="global">
     
@@ -110,6 +110,7 @@ AND SAVE!
     </fieldset> 
     
 </aura:component>
+```
 
 
 
@@ -148,7 +149,7 @@ AND SAVE!
 
 5. Create a Lightning Component called 'CheckboxDemo'
 
-
+```
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" 
                 access="global">
     
@@ -171,16 +172,17 @@ AND SAVE!
     	{!b.label}: {!b.value}<br/>
     </aura:iteration>
 </aura:component>
-
+```
 
 AND SAVE!
 6. As a way to test the checkbox, we can create a Lightning Application
 as follows:
 
-
+```
 <aura:application extends="force:slds">
     <c:CheckboxDemo />
 </aura:application>
+```
 
 
 and SAVE! Click 'Preview' to test the checkbox.
@@ -188,12 +190,13 @@ and SAVE! Click 'Preview' to test the checkbox.
 
 7. Create a Lightning Event called 'Checkbox_Element_Change'
 
-
+```
 <aura:event type="COMPONENT" description="Event template">
     <aura:attribute name="fieldChanged" type="String" default="" />
     <aura:attribute name="fieldValue" type="boolean" default="" />
     <aura:attribute name="fieldLabel" type="boolean" default="" />
 </aura:event>
+```
 
 
 AND SAVE!
@@ -224,9 +227,10 @@ and SAVE!
 
 9. Open the Lightning Component called 'Checkbox_Element' register the event
 
-
+```
     <!-- Step 9: Register the change event -->
     <aura:registerEvent name="Checkbox_Element_Change" type="c:Checkbox_Element_Change"/>
+```
 
     and SAVE!
     
@@ -286,13 +290,14 @@ and SAVE!
  
 12. Open the 'CheckboxGroup' lightning component and 
 
-
+```
     <!-- STEP 12. Checkbox_Element_Change Handler -->
     <aura:handler name="Checkbox_Element_Change" 
                   event="c:Checkbox_Element_Change" 
                   action="{!c.updateCheckboxes}"
                   description=""
                   />
+```
 
 
 and SAVE!
@@ -328,34 +333,39 @@ and SAVE!
 
 14. Now add a handler to detect a change in the 'checkboxes' attribute
 
-
+```
     <!-- STEP 14. Detect a change in the checkboxes attribute -->
     <aura:handler name="change" 
                   value="{!v.checkboxes}" 
                   action="{!c.populateCheckboxes}"
                   description=""/>
+```
 
 
 and SAVE!
+
+
 15. Create a Lightning Event called 'Checkbox_Change'
 
-
+```
 <aura:event type="COMPONENT" description="Event template">
     <aura:attribute name="fieldChanged" type="String" default="" />
 	<aura:attribute name="fieldValuesChanged" type="Object[]" default="[]"/>
 </aura:event>
+```
 
 
 
 16. OK, we want the result of the selecting and de-selecting of checkboxes
 to be communicated back to the parent 'CheckboxDemo' component. So, lets make an event
 
-
+```
     <!-- STEP 16. Register an event to communicate results to the parent component -->
     <aura:registerEvent name="Checkbox_Change" 
                         type="c:Checkbox_Change"
                         description=""
                         />
+```
 
 
 and SAVE!
@@ -381,13 +391,14 @@ and SAVE!
 
 18. Finally, add the followng to the CheckboxDemo Component
 
-
+```
     <!-- STEP 18. Register an event receive results from any checkboxgroup component -->
     <aura:handler name="Checkbox_Change" 
                   event="c:Checkbox_Change" 
                   action="{!c.updateCheckboxes}"
                   description=""
                   />
+```
 
 
 and SAVE!
