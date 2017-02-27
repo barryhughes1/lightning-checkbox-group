@@ -45,12 +45,13 @@ AND SAVE!
 
 2. In the Controller of 'Checkbox_Element':
 
-
+```
 ({
     onCheck: function(component) {
     	// Step 8
     }
 })
+```
 
 
 AND SAVE!
