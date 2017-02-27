@@ -13,7 +13,7 @@ EnableDisableAll - if set to "yes", choosing the 'All' option will disable al ot
 
 TUTORIAL TO MAKE THIS FUNCTIONALITY WITHOUT CLONING
 
-1. Create a new Lightning Component called 'Checkbox_Element'
+STEP 1. Create a new Lightning Component called 'Checkbox_Element'
 
 ```
 <aura:component access="global">
@@ -42,8 +42,7 @@ TUTORIAL TO MAKE THIS FUNCTIONALITY WITHOUT CLONING
 AND SAVE!
 
 
-
-2. In the Controller of 'Checkbox_Element':
+STEP 2. In the Controller of 'Checkbox_Element':
 
 ```
 ({
@@ -60,7 +59,7 @@ AND SAVE!
 
 
  
-3. Create a new Lightning Component called 'CheckboxGroup'
+STEP 3. Create a new Lightning Component called 'CheckboxGroup'
 
 ```
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" 
@@ -118,7 +117,7 @@ AND SAVE!
 AND SAVE!
 
 
-4. Add the following to the controller of the 'CheckboxGroup' component
+STEP 44. Add the following to the controller of the 'CheckboxGroup' component
 
 ```
 ({
@@ -147,7 +146,7 @@ AND SAVE!
 AND SAVE!
 
 
-5. Create a Lightning Component called 'CheckboxDemo'
+STEP 5. Create a Lightning Component called 'CheckboxDemo'
 
 ```
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" 
