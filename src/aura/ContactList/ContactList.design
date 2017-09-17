@@ -1,0 +1,3 @@
+<design:component label="Searchable list of Contacts">
+	<design:attribute name="SearchField" label="Field to Search" description="The field (API Name) to search. Cross-object field references allowed"/>
+</design:component>

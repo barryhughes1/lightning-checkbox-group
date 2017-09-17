@@ -1,0 +1,8 @@
+<design:component label="Checkbox with All functionality">
+	<design:attribute name="FieldLabel" label="Checkbox Field Label" description="The label indicated for the checkbox group"/>
+	<design:attribute name="Options_Object_API_Name" label="Enter Object API Name" />
+	<design:attribute name="Options_Field_API_Name" label="Enter Picklist Field API Name" />
+	<design:attribute name="Checkbox_Labels_CSV_String" label="Enter Checkbox Options" />
+	<design:attribute name="EnableDisableAll" label="Enable 'All' functionality" datasource="yes,no" />
+	<design:attribute name="RenderMapValues" label="Render the 'map' of checkbox values (for developers)" datasource="yes,no" />
+</design:component>

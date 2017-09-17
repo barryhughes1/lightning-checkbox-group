@@ -1,0 +1,55 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" 
+                access="global"
+                controller="Checkboxes_Component_Controller">
+    
+    <!-- Attributes - with design attributes defined -->
+    <aura:attribute name="FieldLabel" type="String" default="" />
+    <aura:attribute name="Options_Object_API_Name" type="String" default="" />
+    <aura:attribute name="Options_Field_API_Name" type="String" default="" />
+    <aura:attribute name="Checkbox_Labels_CSV_String" type="String" default="All,Nike,Puma,Adidas,Callaway" />
+    <aura:attribute name="EnableDisableAll" type="String" default="yes" />
+    <aura:attribute name="RenderMapValues" type="String" default="yes" />
+    
+    <!-- attribute to ensure we do not render the checkboxes until the 
+         options entered via attriutes have been initialised -->
+    <aura:attribute name="loadCheckboxes" type="String" default="No" />
+    
+    <!-- attributes for the Checkbox_Group component -->
+    <aura:attribute name="Checkbox_Labels" type="String[]" default="[]" />
+    <aura:attribute name="CheckBoxObjects" type="Object[]" default="[]" description=""/>
+    
+    <!-- handlers -->  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <!-- Register an application event that fires when a checkbox is updated -->  
+    <aura:registerEvent name="Checkbox_Search_Event" 
+                        type="c:Checkbox_Search_Event"/>
+    
+    <!-- STEP 38. Register an event receive results from any checkboxgroup component -->
+    <aura:handler name="Checkbox_Change" 
+                  event="c:Checkbox_Change" 
+                  action="{!c.updateCheckboxes}"
+                  description=""
+                  />
+    
+    <aura:if isTrue="{! v.loadCheckboxes == 'yes' }">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-m-around--large">
+            <div class="slds-p-horizontal--small slds-size--1-of-1">
+                <div class="slds-box slds-box--small slds-theme--shade">
+                    <div class="slds-form--stacked">
+                        <c:Checkbox_Group label="{!v.FieldLabel}"
+                                          fieldParentFieldSet="CheckBoxObjects"
+                                          values="{!v.Checkbox_Labels}"
+                                          EnableDisableAll="{!v.EnableDisableAll}" />  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aura:if isTrue="{!v.RenderMapValues == 'yes'}">
+            <aura:iteration items="{!v.CheckBoxObjects}"
+                            var="b">
+                {!b.label}: {!b.value}<br/>
+            </aura:iteration>
+        </aura:if>
+    </aura:if>
+</aura:component>

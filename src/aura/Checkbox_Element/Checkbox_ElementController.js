@@ -1,5 +1,6 @@
 ({
     onCheck: function(component) {
+    	// will fill this in at Step 28
         var compEvent = component.getEvent("Checkbox_Element_Change");
         compEvent.setParams(
             {
@@ -8,9 +9,6 @@
                 "fieldLabel" : component.get("v.fieldLabel")
             }
         );
-        compEvent.fire();
-    },
-    resetFieldValues: function(component) {
-     	component.set("v.fieldValue", "false");
+        compEvent.fire();    	
     }
 })
